@@ -1,0 +1,455 @@
+{
+  "Version": 5,
+  "Start": {
+    "Chords": [],
+    "Global": true
+  },
+  "Stop": {
+    "Chords": [],
+    "Global": true
+  },
+  "AddFrame": {
+    "Chords": [],
+    "Global": true
+  },
+  "SubFrame": {
+    "Chords": [],
+    "Global": true
+  },
+  "ToggleLevel": {
+    "Chords": [],
+    "Global": true
+  },
+  "Multiply2": {
+    "Chords": [],
+    "Global": true
+  },
+  "Multiply3": {
+    "Chords": [],
+    "Global": true
+  },
+  "ListUp": {
+    "Chords": [],
+    "Global": true
+  },
+  "ListDown": {
+    "Chords": [],
+    "Global": true
+  },
+  "ExportStats": {
+    "Chords": [],
+    "Global": true
+  },
+  "ToggleGlobalHotkeys": {
+    "Chords": [],
+    "Global": true
+  },
+  "NpcUp": {
+    "Chords": [],
+    "Global": true
+  },
+  "NpcDown": {
+    "Chords": [],
+    "Global": true
+  },
+  "NpcLeft": {
+    "Chords": [],
+    "Global": true
+  },
+  "NpcRight": {
+    "Chords": [],
+    "Global": true
+  },
+  "NpcFocusPrev": {
+    "Chords": [],
+    "Global": true
+  },
+  "NpcFocusNext": {
+    "Chords": [],
+    "Global": true
+  },
+  "NpcUndo": {
+    "Chords": [],
+    "Global": true
+  },
+  "NpcComplete": {
+    "Chords": [],
+    "Global": true
+  },
+  "NpcMiss": {
+    "Chords": [],
+    "Global": true
+  },
+  "IgtPlay": {
+    "Chords": [],
+    "Global": true
+  },
+  "IgtUndo": {
+    "Chords": [],
+    "Global": true
+  },
+  "IgtAdd2": {
+    "Chords": [],
+    "Global": true
+  },
+  "IgtSub2": {
+    "Chords": [],
+    "Global": true
+  },
+  "IgtAdd3": {
+    "Chords": [],
+    "Global": true
+  },
+  "IgtSub3": {
+    "Chords": [],
+    "Global": true
+  },
+  "IgtAdd4": {
+    "Chords": [],
+    "Global": true
+  },
+  "IgtSub4": {
+    "Chords": [],
+    "Global": true
+  },
+  "IgtAdd5": {
+    "Chords": [],
+    "Global": true
+  },
+  "IgtSub5": {
+    "Chords": [],
+    "Global": true
+  },
+  "IgtAdd6": {
+    "Chords": [],
+    "Global": true
+  },
+  "IgtSub6": {
+    "Chords": [],
+    "Global": true
+  },
+  "NpcContextWindowMs": 0,
+  "NpcCuedLabPress": false,
+  "NpcCuedLabPressOffsetFrames": 110,
+  "NpcCuedPressWindowMs": 30,
+  "SavestateLoadPath": "",
+  "SavestateSavePath": "",
+  "RomPatchRomPath": "",
+  "RomPatchOutputPath": "",
+  "RomPatchPatchPath": "",
+  "EncounterRoute": "R1a,21,22,1,6,0,0,4\nR1b,21,5,1,6,0,0,1\nR1c,21,22,1,6,0,1,4\nR2,21,5,1,6,0,0,1\nF1,14,43,1,7,0,0,1\nF2,14,9,1,7,0,0,1",
+  "EncounterCycles": 53,
+  "EncounterProtocol": "rta",
+  "EncounterButtons": "help",
+  "EncounterSaves": "multi",
+  "EncounterMaxSeconds": 0,
+  "EncounterGame": "fr",
+  "EncounterCombo": "any",
+  "EncounterSound": "mono",
+  "EncounterIntro": "none",
+  "EncounterTitle": "either",
+  "EncounterDelayMs": 0,
+  "EncounterOffsetMs": null,
+  "EncounterIntroFrame": 0,
+  "EncounterIntroWindow": 1,
+  "EncounterLoopFrame": 0,
+  "EncounterLoopWindow": 1,
+  "EncounterTitleFrame": 0,
+  "EncounterTitleWindow": 1,
+  "EncounterIntroExtra": "",
+  "EncounterTitleExtra": "",
+  "EncounterPickedSeed": -1,
+  "EncounterPickedOffset": 0,
+  "EncounterPickedPass": 0,
+  "EncounterActiveRoute": "",
+  "EncounterExamplesSeeded": [
+    "Example FR Round 2",
+    "Example FR Glitchless",
+    "FR Help 1-0 0A94",
+    "FR L=A 1-0 0A94"
+  ],
+  "TimerEncounterRoute": "",
+  "KeyMethod": 0,
+  "GlobalNumpadInput": true,
+  "GlobalHotkeysEnabled": true,
+  "ClipboardFormat": 0,
+  "AlwaysOnTop": false,
+  "DarkMode": true,
+  "ViewManip": true,
+  "ViewConstraints": true,
+  "ViewTraining": true,
+  "ViewEncounter": true,
+  "ViewSavestate": false,
+  "ViewTroubleshooter": false,
+  "ViewGenericFixed": true,
+  "ViewGenericVariable": true,
+  "ViewGenericIgt": true,
+  "ViewGenericTraining": true,
+  "SelectedTab": "genericvariable",
+  "ShowLabDelayDashes": false,
+  "AutoShowLevelStats": true,
+  "ClockDrift": 1.00001134323983,
+  "AtomicClockSync": true,
+  "HighPriority": true,
+  "ZoomPercent": 100,
+  "TimeFormat": 0,
+  "StatBoxLabelColor": "#4DC6D6",
+  "StatBoxFillColor": "#3C3C3C",
+  "StatBoxValueColor": "#FFFFFF",
+  "StatBoxOutlineColor": "#000000",
+  "StatBoxFrameColor": "#000000",
+  "StatBoxColorsAreDefault": true,
+  "StatServerEnabled": false,
+  "StatServerPort": 8722,
+  "StatServerAllowNetwork": false,
+  "StatServerRequireToken": false,
+  "StatServerToken": "",
+  "StatServerTransparent": false,
+  "StatServerStripSide": 0,
+  "StatServerPostRun": true,
+  "StatServerPostRunSeconds": 7,
+  "VideoEnabled": false,
+  "VideoSourceKind": 0,
+  "VideoSourceId": "",
+  "VideoCropX": 0,
+  "VideoCropY": 0,
+  "VideoCropWidth": 0,
+  "VideoCropHeight": 0,
+  "VideoDownscale": true,
+  "Fps": "59.7275",
+  "Offset": "0",
+  "VisualOffset": "0",
+  "DelayOffset": "0",
+  "Interval": "1000",
+  "NumBeeps": "4",
+  "Volume": 70,
+  "BeepEnabled": true,
+  "FlashEnabled": true,
+  "BeepSound": "ping1",
+  "AudioOutput": 0,
+  "AudioScheduling": 0,
+  "AudioPeriodMs": 0,
+  "TrainingRounds": 10,
+  "GenericFps": "60",
+  "GenericOffset": "0",
+  "GenericVisualOffset": "0",
+  "GenericDelayOffset": "0",
+  "GenericInterval": "500",
+  "GenericNumBeeps": "5",
+  "GenericBeepEnabled": true,
+  "GenericFlashEnabled": true,
+  "FixedTimers": {
+    "Name": "",
+    "Unit": "ms",
+    "Timers": [
+      {
+        "Name": "Timer",
+        "Offsets": "5000",
+        "Interval": "500",
+        "NumBeeps": "5"
+      }
+    ]
+  },
+  "FixedActiveSet": "",
+  "FixedSelectedTimer": 0,
+  "FixedCheckedTimers": [
+    0
+  ],
+  "FixedAdjustAll": true,
+  "FixedAdjustFrames": 0,
+  "IgtGame": "Red/Blue",
+  "IgtFps": "59.7275",
+  "IgtTimers": [
+    {
+      "Name": "Timer",
+      "Frame": "0",
+      "Offsets": "0",
+      "Interval": "250",
+      "NumBeeps": "3"
+    }
+  ],
+  "IgtSelectedTimer": 0,
+  "ShowRunTips": true,
+  "TipTrainerUsed": true,
+  "TipOddsCalculated": false,
+  "TipHiddenRolls": 0,
+  "TipAttempts": 0,
+  "TipLikelyHits": 0,
+  "MinFrame": "0",
+  "MaxFrame": "10000",
+  "PcFrame": "",
+  "SpeciesId": 7,
+  "Level": 5,
+  "Natures": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "IvMinus": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "IvNeutral": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "IvPlus": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "Ranges": [
+    {
+      "Name": "Target",
+      "MinFrame": "",
+      "MaxFrame": "",
+      "Natures": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "IvMinus": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "IvNeutral": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "IvPlus": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "Backup": false,
+      "BackupWithin": 2,
+      "Color": -2
+    }
+  ],
+  "ActivePreset": "",
+  "PrimaryRange": {
+    "Name": "Target",
+    "MinFrame": "",
+    "MaxFrame": "",
+    "Natures": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "IvMinus": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "IvNeutral": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "IvPlus": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "Backup": false,
+    "BackupWithin": 2,
+    "Color": -2
+  }
+}

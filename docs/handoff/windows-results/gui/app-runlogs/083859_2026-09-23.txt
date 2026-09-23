@@ -1,0 +1,11 @@
+﻿08:38:59  --- run started, tracker off ---
+08:38:59    context window 0 ms, lab cue off
+08:38:59  priority: high
+08:39:00  armed 600: correction +0 -> effective frame 600, press due 10000.0 ms (0 frames of input lag), final beep 10000.0 ms, offset 0 ms, delay 0 ms, fps 60
+08:39:00  audio: written 0.0 ms after arm (buffer 0.0 ms of it), timer resolution 1.00 ms, window foreground, output wasapi 10.00 ms, DeviceClock
+08:39:00  audio: device started 39.8 ms after the write
+08:39:07  audio: default device changed, the output will be reopened
+08:39:08  audio: output wasapi shared, engine period 10.00 ms (driver min 10.00, default 10.00), mix 48000 Hz float32 2ch, buffer 22.00 ms fed 20.00 ms ahead
+08:39:10  audio: default device changed, the output will be reopened
+08:39:10  audio: output wasapi shared, engine period 10.00 ms (driver min 10.00, default 10.00), mix 44100 Hz float32 8ch, buffer 22.00 ms fed 20.00 ms ahead
+08:40:31  audio: output wasapi shared, engine period 10.00 ms (driver min 10.00, default 10.00), mix 44100 Hz float32 8ch, buffer 22.00 ms fed 20.00 ms ahead

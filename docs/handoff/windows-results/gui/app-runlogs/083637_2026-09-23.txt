@@ -1,0 +1,6 @@
+﻿08:36:37  --- run started, tracker off ---
+08:36:37    context window 0 ms, lab cue off
+08:36:37  priority: high
+08:36:37  armed 222: correction +0 -> effective frame 222, press due 3700.0 ms (0 frames of input lag), final beep 3700.0 ms, offset 0 ms, delay 0 ms, fps 60
+08:36:37  audio: written 0.0 ms after arm (buffer 0.0 ms of it), timer resolution 1.00 ms, window foreground, output wasapi 10.00 ms, DeviceClock
+08:36:37  audio: device started 30.4 ms after the write

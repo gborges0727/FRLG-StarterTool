@@ -1,0 +1,4 @@
+﻿08:33:22  --- run started, tracker off ---
+08:33:22    context window 0 ms, lab cue off
+08:33:22  fixed timer "Timer" started: targets 5000 ms, interval 500 ms x5, adjust 0 frames, offset 0 ms, delay 0 ms, fps 60
+08:33:22  priority: high

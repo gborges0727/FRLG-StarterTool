@@ -1,0 +1,4 @@
+down+enter at qpc_ms 72381411.873
+down+enter at qpc_ms 72383599.478
+down+enter at qpc_ms 72385781.467
+down+enter at qpc_ms 72387950.920

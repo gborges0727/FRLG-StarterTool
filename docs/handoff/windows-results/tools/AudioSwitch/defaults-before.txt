@@ -1,0 +1,4 @@
+﻿{0.0.0.00000000}.{14aeb1ad-c4b5-4b6d-9186-966eec9e289a}	Realtek Digital Output (Realtek USB Audio)	
+{0.0.0.00000000}.{4b887620-f7d0-4010-a01d-d7c76a6c99f1}	PG27AQDM (NVIDIA High Definition Audio)	
+{0.0.0.00000000}.{82b5c444-5bbf-4cb4-bd2c-18c3b6a5ce0a}	PG27AQDM (NVIDIA High Definition Audio)	
+{0.0.0.00000000}.{eea469c9-ce80-4220-a5fd-24ca98d7f4d9}	Speakers (Yeti Classic)	default: console multimedia communications

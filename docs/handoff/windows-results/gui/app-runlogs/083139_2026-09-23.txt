@@ -1,0 +1,4 @@
+﻿08:31:39  --- run started, tracker off ---
+08:31:39    context window 0 ms, lab cue off
+08:31:39  priority: high
+08:31:47  --- run stopped, tracker off ---

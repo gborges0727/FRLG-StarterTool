@@ -1,0 +1,50 @@
+﻿BeepProbe mode=clockprobe trials=50 offset=500 ms target=40 s presubmit=False allowAny=False process=x86
+QPC frequency 10000000 Hz, beep 1920 frames, onset at frame 0, peak 0.610
+default render (Console role):    Speakers (Yeti Classic)  {{0.0.0.00000000}.{eea469c9-ce80-4220-a5fd-24ca98d7f4d9}}
+default render (Multimedia role): Speakers (Yeti Classic)  {{0.0.0.00000000}.{eea469c9-ce80-4220-a5fd-24ca98d7f4d9}}  [same endpoint]
+  [Multimedia] mix float 44100 Hz 8 ch 32 bit (tag 0xFFFE); GetDevicePeriod default 10.00 ms min 3.00 ms; GetSharedModeEnginePeriod default 441 fund 441 min 441 max 441 frames (hr 0x0); current engine period 441 frames = 10.00 ms (hr 0x0)
+  [Console] mix float 44100 Hz 8 ch 32 bit (tag 0xFFFE); GetDevicePeriod default 10.00 ms min 3.00 ms; GetSharedModeEnginePeriod default 441 fund 441 min 441 max 441 frames (hr 0x0); current engine period 441 frames = 10.00 ms (hr 0x0)
+loopback capture: float 44100 Hz 8 ch 32 bit (tag 0xFFFE), buffer 8820 frames, GetStreamLatency 0.00 ms
+clockprobe: float 44100 Hz 8 ch 32 bit (tag 0xFFFE), period 441 frames, buffer 970 frames, fed 882 ahead, IAudioClock frequency 1411200 (32 per frame), characteristics 0x1
+6001 passes; qpc-vs-position fit: +9.0 ppm vs nominal
+residual of the reported qpc against the fitted line, first reading of each pass (0.05 ms bins):
+    -12.45 ms | # 1
+     -0.15 ms | # 11
+     -0.10 ms | ############################################################################### 4694
+     -0.05 ms | ############# 734
+      0.00 ms | # 58
+      0.05 ms | # 2
+      0.15 ms | # 1
+      0.70 ms | ##### 260
+      0.75 ms | #### 240
+call time minus fitted time of the reported position, first reading of each pass (0.25 ms bins):
+    -12.75 ms | # 1
+     -0.25 ms | ########################################################################################### 5440
+      0.00 ms | # 60
+      0.50 ms | ##### 289
+      0.75 ms | #### 211
+within-pass polling (10818 readings over 601 passes, ~0.5 ms apart): position changed on 10200, stayed on 17 (of those, qpc still moved on 17)
+residual of polled readings against the same line (0.05 ms bins):
+    -11.80 ms | # 1
+    -11.25 ms | # 1
+    -10.75 ms | # 1
+    -10.20 ms | # 1
+     -9.70 ms | # 1
+     -9.20 ms | # 1
+     -8.70 ms | # 1
+     -8.20 ms | # 1
+     -7.70 ms | # 1
+     -7.20 ms | # 1
+     -6.70 ms | # 1
+     -6.20 ms | # 1
+     -5.70 ms | # 1
+     -5.20 ms | # 1
+     -4.70 ms | # 1
+     -4.20 ms | # 1
+     -3.70 ms | # 1
+     -3.20 ms | # 1
+     -0.15 ms | # 26
+     -0.10 ms | ###################################################################################### 9295
+     -0.05 ms | ############## 1409
+      0.00 ms | # 70
+raw readings written to C:\Users\User\source\frlg-beep-results\clockprobe\clockprobe.csv.raw.csv

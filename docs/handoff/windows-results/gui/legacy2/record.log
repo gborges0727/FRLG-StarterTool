@@ -1,0 +1,10 @@
+BeepProbe mode=record trials=50 offset=500 ms target=40 s presubmit=False allowAny=False process=x86
+QPC frequency 10000000 Hz, beep 1920 frames, onset at frame 0, peak 0.610
+default render (Console role):    Speakers (Yeti Classic)  {{0.0.0.00000000}.{eea469c9-ce80-4220-a5fd-24ca98d7f4d9}}
+default render (Multimedia role): Speakers (Yeti Classic)  {{0.0.0.00000000}.{eea469c9-ce80-4220-a5fd-24ca98d7f4d9}}  [same endpoint]
+  [Multimedia] mix float 44100 Hz 8 ch 32 bit (tag 0xFFFE); GetDevicePeriod default 10.00 ms min 3.00 ms; GetSharedModeEnginePeriod default 441 fund 441 min 441 max 441 frames (hr 0x0); current engine period 441 frames = 10.00 ms (hr 0x0)
+  [Console] mix float 44100 Hz 8 ch 32 bit (tag 0xFFFE); GetDevicePeriod default 10.00 ms min 3.00 ms; GetSharedModeEnginePeriod default 441 fund 441 min 441 max 441 frames (hr 0x0); current engine period 441 frames = 10.00 ms (hr 0x0)
+loopback capture: float 44100 Hz 8 ch 32 bit (tag 0xFFFE), buffer 8820 frames, GetStreamLatency 0.00 ms
+record mode: capturing until C:\Users\User\source\frlg-beep-results\gui\legacy2\stop exists (max 900 s)
+5 onsets written to C:\Users\User\source\frlg-beep-results\gui\legacy2\onsets.csv
+49 non-silent 5 ms bins written to C:\Users\User\source\frlg-beep-results\gui\legacy2\envelope.csv

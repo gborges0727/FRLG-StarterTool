@@ -1,0 +1,14 @@
+﻿08:17:40  audio: output wasapi shared, engine period 10.00 ms (driver min 10.00, default 10.00), mix 44100 Hz float32 8ch, buffer 22.00 ms fed 20.00 ms ahead
+08:24:49  audio: beep started 35.714 ms late
+08:24:51  audio: beep started 38.367 ms late
+08:24:53  audio: beep started 36.848 ms late
+08:24:55  audio: beep started 35.941 ms late
+08:26:08  audio: beep started 33.900 ms late
+08:26:11  audio: beep started 39.388 ms late
+08:26:14  audio: beep started 34.331 ms late
+08:26:16  audio: beep started 39.501 ms late
+08:26:19  audio: beep started 31.338 ms late
+08:26:22  audio: beep started 39.751 ms late
+08:26:24  audio: beep started 37.166 ms late
+08:26:27  audio: beep started 37.007 ms late
+08:27:18  audio: beep started 37.937 ms late
