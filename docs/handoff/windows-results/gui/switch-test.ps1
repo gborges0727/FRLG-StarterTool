@@ -1,3 +1,4 @@
+﻿param([string]$YetiName = 'switch-yeti', [string]$RealtekName = 'switch-realtek')
 # Step 5 device-switch check: Variable Offset countdown at frame 600 (beeps at 8.0-10.0 s), default output switched
 # from the Yeti to the Realtek digital output at +8.7 s, switched back at +10.8 s. Both endpoints are recorded.
 . C:\Users\User\source\frlg-beep-results\gui\gui.ps1
@@ -9,8 +10,8 @@ $yeti = '{0.0.0.00000000}.{eea469c9-ce80-4220-a5fd-24ca98d7f4d9}'
 $rtk = '{0.0.0.00000000}.{14aeb1ad-c4b5-4b6d-9186-966eec9e289a}'
 $p = Get-Process -Id ([int](Get-Content C:\Users\User\source\frlg-beep-results\gui\pid.txt))
 
-$dirA = New-Rec 'switch-yeti'
-$dirB = 'C:\Users\User\source\frlg-beep-results\gui\switch-realtek'
+$dirA = New-Rec $YetiName
+$dirB = Join-Path 'C:\Users\User\source\frlg-beep-results\gui' $RealtekName
 New-Item -ItemType Directory -Force $dirB | Out-Null
 foreach ($name in 'recording', 'stop', 'onsets.csv', 'envelope.csv') {
     $old = Join-Path $dirB $name
@@ -49,8 +50,10 @@ $ms0 = $t0 / 10000.0
 "t0,$ms0`nswitch,$($ts / 10000.0)`nrestore,$($tr / 10000.0)" | Set-Content (Join-Path $dirA 'actions.csv')
 "switched to Realtek at +{0:F1} ms, restored Yeti at +{1:F1} ms" -f (($ts - $t0) / 10000.0), (($tr - $t0) / 10000.0)
 "Yeti loopback:"
-foreach ($o in $onA) { "  {0}: +{1,9:F3} ms, peak {2}" -f $o.n, ([double]$o.fit_ms - $ms0), $o.peak }
+foreach ($o in $onA) { "  {0}: stamp +{1,9:F3} ms (fit +{2,9:F3}), peak {3}" -f $o.n, ([double]$o.stamp_ms - $ms0), ([double]$o.fit_ms - $ms0), $o.peak }
 "Realtek loopback:"
-foreach ($o in $onB) { "  {0}: +{1,9:F3} ms, peak {2}" -f $o.n, ([double]$o.fit_ms - $ms0), $o.peak }
+foreach ($o in $onB) { "  {0}: stamp +{1,9:F3} ms (fit +{2,9:F3}), peak {3}" -f $o.n, ([double]$o.stamp_ms - $ms0), ([double]$o.fit_ms - $ms0), $o.peak }
 & $sw list
 Get-Content (Get-ChildItem "$env:APPDATA\frlg-startertool\runs" | Sort-Object LastWriteTime | Select-Object -Last 1).FullName
+
+

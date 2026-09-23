@@ -1,0 +1,22 @@
+Loopback measures when audio leaves the audio engine.
+It excludes the constant DAC and earbud latency.
+Close other audio sources before testing. Endpoint volume and audio effects can affect onset detection.
+An onset is the first sample above 25% of the loaded clip's peak after 20 ms of near-silence.
+The hit rate assumes a perfectly tuned offset and a uniformly random game-frame phase.
+Missing onsets have empty onset and lateness fields in the CSV. Statistics use detected beeps.
+
+Mode DeviceClock used Speakers (Yeti Classic).
+The output mix format was 44100 Hz float32 8ch. The engine period was 10.000000 ms.
+Loopback captured Speakers (Yeti Classic) at 44100 Hz float32 8ch.
+The clip was ping1 at 70% volume. The threshold was 0.095352.
+The test did not detect 0 of 125 beeps.
+Capture reported 0 packets with invalid timestamps and 1 discontinuities.
+Final beeps
+Count | Min ms | Mean ms | P5 ms | P95 ms | Max ms | Spread ms | Estimated hit rate
+25 | 55.595 | 61.365 | 56.224 | 65.143 | 66.099 | 10.503 | 83.63 %
+All beeps
+Count | Min ms | Mean ms | P5 ms | P95 ms | Max ms | Spread ms | Estimated hit rate
+125 | 55.572 | 61.354 | 56.228 | 65.308 | 66.099 | 10.527 | 83.65 %
+Measurements were written to C:\Users\User\source\FRLG-StarterTool\docs\handoff\windows-results\retest-c875f97\selftest-noclock\beep-selftest-deviceclock-20260923-093925-557.csv.
+audio: WASAPI has no IAudioClock, using Legacy scheduling
+audio: output wasapi shared, engine period 10.00 ms (driver min 10.00, default 10.00), mix 44100 Hz float32 8ch, buffer 22.00 ms fed 20.00 ms ahead

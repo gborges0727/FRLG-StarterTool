@@ -1,0 +1,1 @@
+﻿09:42:17  audio: output wasapi shared, engine period 10.00 ms (driver min 10.00, default 10.00), mix 44100 Hz float32 8ch, buffer 22.00 ms fed 20.00 ms ahead

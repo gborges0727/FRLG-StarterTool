@@ -1,0 +1,21 @@
+Loopback measures when audio leaves the audio engine.
+It excludes the constant DAC and earbud latency.
+Close other audio sources before testing. Endpoint volume and audio effects can affect onset detection.
+An onset is the first sample above 25% of the loaded clip's peak after 20 ms of near-silence.
+The hit rate assumes a perfectly tuned offset and a uniformly random game-frame phase.
+Missing onsets have empty onset and lateness fields in the CSV. Statistics use detected beeps.
+
+Mode DeviceClock used Speakers (Yeti Classic).
+The output mix format was 44100 Hz float32 8ch. The engine period was 10.000000 ms.
+Loopback captured Speakers (Yeti Classic) at 44100 Hz float32 8ch.
+The clip was ping1 at 70% volume. The threshold was 0.095352.
+The test did not detect 0 of 50 beeps.
+Capture reported 0 packets with invalid timestamps and 1 discontinuities.
+Final beeps
+Count | Min ms | Mean ms | P5 ms | P95 ms | Max ms | Spread ms | Estimated hit rate
+10 | 25.475 | 25.904 | 25.481 | 26.318 | 26.325 | 0.850 | 97.62 %
+All beeps
+Count | Min ms | Mean ms | P5 ms | P95 ms | Max ms | Spread ms | Estimated hit rate
+50 | -10.535 | 24.850 | 24.687 | 26.315 | 26.329 | 36.864 | 96.76 %
+Measurements were written to C:\Users\User\source\frlg-beep-results\retest\diag-threshold\beep-selftest-deviceclock-20260923-093114-358.csv.
+audio: output wasapi shared, engine period 10.00 ms (driver min 10.00, default 10.00), mix 44100 Hz float32 8ch, buffer 22.00 ms fed 20.00 ms ahead

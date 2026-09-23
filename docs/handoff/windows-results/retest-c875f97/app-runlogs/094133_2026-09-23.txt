@@ -1,0 +1,8 @@
+﻿09:41:33  --- run started, tracker off ---
+09:41:33    context window 0 ms, lab cue off
+09:41:33  priority: high
+09:41:34  audio: WASAPI has no IAudioClock, using Legacy scheduling
+09:41:34  audio: output wasapi shared, engine period 10.00 ms (driver min 10.00, default 10.00), mix 44100 Hz float32 8ch, buffer 22.00 ms fed 20.00 ms ahead
+09:41:34  armed 300: correction +0 -> effective frame 300, press due 5000.0 ms (0 frames of input lag), final beep 5000.0 ms, offset 0 ms, delay 0 ms, fps 60
+09:41:34  audio: written 16.9 ms after arm (buffer 0.0 ms of it), timer resolution 1.00 ms, window foreground, output wasapi 10.00 ms, Legacy
+09:41:34  audio: device started 22.0 ms after the write

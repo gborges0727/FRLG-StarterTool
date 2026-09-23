@@ -1,0 +1,51 @@
+﻿BeepProbe mode=selftest trials=50 offset=500 ms target=40 s presubmit=False allowAny=False process=x86
+QPC frequency 10000000 Hz, beep 2180 frames, onset at frame 5, peak 0.545
+default render (Console role):    Speakers (Yeti Classic)  {{0.0.0.00000000}.{eea469c9-ce80-4220-a5fd-24ca98d7f4d9}}
+default render (Multimedia role): Speakers (Yeti Classic)  {{0.0.0.00000000}.{eea469c9-ce80-4220-a5fd-24ca98d7f4d9}}  [same endpoint]
+  [Multimedia] mix float 44100 Hz 8 ch 32 bit (tag 0xFFFE); GetDevicePeriod default 10.00 ms min 3.00 ms; GetSharedModeEnginePeriod default 441 fund 441 min 441 max 441 frames (hr 0x0); current engine period 441 frames = 10.00 ms (hr 0x0)
+  [Console] mix float 44100 Hz 8 ch 32 bit (tag 0xFFFE); GetDevicePeriod default 10.00 ms min 3.00 ms; GetSharedModeEnginePeriod default 441 fund 441 min 441 max 441 frames (hr 0x0); current engine period 441 frames = 10.00 ms (hr 0x0)
+silent keepalive render stream started (970 frame buffer)
+loopback capture: float 44100 Hz 8 ch 32 bit (tag 0xFFFE), buffer 8820 frames, GetStreamLatency 0.00 ms
+selftest mode: listening until C:\Users\User\source\FRLG-StarterTool\docs\handoff\windows-results\retest-c875f97\selftest-regression\beep-selftest-summary.txt is rewritten (max 600 s)
+stopped listening after 179.2 s
+17950 packets captured, onset threshold 0.1144 (0.30 of the clip's peak at 70% volume), clip onset at frame 5
+self-test clock drift correction 1.000011343 (+11.34 ppm), converted back to raw QPC
+
+== beep-selftest-legacy-20260923-093558-797.csv: 125 beeps, 0 not found by BeepProbe
+final beeps, ARRIVAL-FIT clock       : n=25 min   45.87 p5   46.71 median   51.81 mean   51.39 p95   55.31 max   55.64 ms  spread 9.77 ms = 0.58 GBA frames, sd 2.65 ms
+final beeps, self-test (packet stamp): n=25 min   55.75 p5   56.59 median   61.68 mean   61.30 p95   65.49 max   66.00 ms  spread 10.24 ms = 0.61 GBA frames, sd 2.70 ms
+all beeps,   ARRIVAL-FIT clock       : n=125 min   45.87 p5   46.71 median   51.81 mean   51.39 p95   55.31 max   55.65 ms  spread 9.78 ms = 0.58 GBA frames, sd 2.65 ms
+all beeps,   self-test (packet stamp): n=125 min   55.72 p5   56.59 median   61.66 mean   61.36 p95   65.21 max   66.27 ms  spread 10.55 ms = 0.63 GBA frames, sd 2.66 ms
+all beeps,   BeepProbe packet stamp  : n=125 min   55.64 p5   56.51 median   61.58 mean   61.28 p95   65.13 max   66.19 ms  spread 10.55 ms = 0.63 GBA frames, sd 2.66 ms
+self-test minus arrival-fit, per beep: n=125 min    9.82 p5    9.83 median    9.88 mean    9.97 p95   10.69 max   10.69 ms  spread 0.87 ms = 0.05 GBA frames, sd 0.26 ms
+estimated hit rate (self-test formula), arrival-fit: final 86.71 %, all 86.70 %
+histogram of arrival-fit lateness, all beeps:
+histogram (1 ms bins):
+    45 ms | ##### 5
+    46 ms | ##### 5
+    47 ms | ##### 5
+    48 ms | ########### 11
+    49 ms | ################# 17
+    50 ms | ############ 12
+    51 ms | ########## 10
+    52 ms | #################### 20
+    53 ms | ############### 15
+    54 ms | ########## 10
+    55 ms | ############### 15
+
+== beep-selftest-deviceclock-20260923-093723-527.csv: 125 beeps, 0 not found by BeepProbe
+final beeps, ARRIVAL-FIT clock       : n=25 min   14.81 p5   14.82 median   15.63 mean   15.48 p95   15.69 max   15.69 ms  spread 0.87 ms = 0.05 GBA frames, sd 0.32 ms
+final beeps, self-test (packet stamp): n=25 min   24.68 p5   24.69 median   25.51 mean   25.42 p95   26.31 max   26.34 ms  spread 1.65 ms = 0.10 GBA frames, sd 0.42 ms
+all beeps,   ARRIVAL-FIT clock       : n=125 min   14.81 p5   14.83 median   15.64 mean   15.57 p95   15.66 max   15.69 ms  spread 0.88 ms = 0.05 GBA frames, sd 0.21 ms
+all beeps,   self-test (packet stamp): n=125 min   24.67 p5   24.71 median   25.51 mean   25.50 p95   26.31 max   26.35 ms  spread 1.67 ms = 0.10 GBA frames, sd 0.30 ms
+all beeps,   BeepProbe packet stamp  : n=125 min   24.59 p5   24.63 median   25.43 mean   25.42 p95   26.23 max   26.26 ms  spread 1.67 ms = 0.10 GBA frames, sd 0.30 ms
+self-test minus arrival-fit, per beep: n=125 min    9.84 p5    9.84 median    9.87 mean    9.93 p95   10.66 max   10.70 ms  spread 0.86 ms = 0.05 GBA frames, sd 0.20 ms
+estimated hit rate (self-test formula), arrival-fit: final 98.96 %, all 99.56 %
+histogram of arrival-fit lateness, all beeps:
+histogram (1 ms bins):
+    14 ms | ######### 9
+    15 ms | #################################################################################################################### 116
+
+engine clock fit over the whole run: -8.8 ppm over 179.6 s (17960 samples); residual of qpc-vs-position fit: rms 0.224 ms, max 0.749 ms
+loopback packets flagged: discontinuity 1, timestamp-error 0
+per-beep rows written to C:\Users\User\source\FRLG-StarterTool\docs\handoff\windows-results\retest-c875f97\selftest-regression\beepprobe-crosscheck.csv

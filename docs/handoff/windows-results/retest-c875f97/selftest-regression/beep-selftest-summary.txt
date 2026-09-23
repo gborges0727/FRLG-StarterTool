@@ -1,0 +1,38 @@
+Loopback measures when audio leaves the audio engine.
+It excludes the constant DAC and earbud latency.
+Close other audio sources before testing. Endpoint volume and audio effects can affect onset detection.
+An onset is the first sample above 25% of the loaded clip's peak after 20 ms of near-silence.
+The hit rate assumes a perfectly tuned offset and a uniformly random game-frame phase.
+Missing onsets have empty onset and lateness fields in the CSV. Statistics use detected beeps.
+
+Mode Legacy used Speakers (Yeti Classic).
+The output mix format was 44100 Hz float32 8ch. The engine period was 10.000000 ms.
+Loopback captured Speakers (Yeti Classic) at 44100 Hz float32 8ch.
+The clip was ping1 at 70% volume. The threshold was 0.095352.
+The test did not detect 0 of 125 beeps.
+Capture reported 0 packets with invalid timestamps and 1 discontinuities.
+Final beeps
+Count | Min ms | Mean ms | P5 ms | P95 ms | Max ms | Spread ms | Estimated hit rate
+25 | 55.754 | 61.298 | 56.777 | 65.377 | 65.997 | 10.243 | 86.54 %
+All beeps
+Count | Min ms | Mean ms | P5 ms | P95 ms | Max ms | Spread ms | Estimated hit rate
+125 | 55.720 | 61.363 | 56.587 | 65.213 | 66.274 | 10.555 | 86.61 %
+Measurements were written to C:\Users\User\source\FRLG-StarterTool\docs\handoff\windows-results\retest-c875f97\selftest-regression\beep-selftest-legacy-20260923-093558-797.csv.
+audio: output wasapi shared, engine period 10.00 ms (driver min 10.00, default 10.00), mix 44100 Hz float32 8ch, buffer 22.00 ms fed 20.00 ms ahead
+
+Mode DeviceClock used Speakers (Yeti Classic).
+The output mix format was 44100 Hz float32 8ch. The engine period was 10.000000 ms.
+Loopback captured Speakers (Yeti Classic) at 44100 Hz float32 8ch.
+The clip was ping1 at 70% volume. The threshold was 0.095352.
+The test did not detect 0 of 125 beeps.
+Capture reported 0 packets with invalid timestamps and 1 discontinuities.
+Final beeps
+Count | Min ms | Mean ms | P5 ms | P95 ms | Max ms | Spread ms | Estimated hit rate
+25 | 24.682 | 25.416 | 24.696 | 26.159 | 26.336 | 1.655 | 98.59 %
+All beeps
+Count | Min ms | Mean ms | P5 ms | P95 ms | Max ms | Spread ms | Estimated hit rate
+125 | 24.672 | 25.500 | 24.711 | 26.306 | 26.345 | 1.673 | 99.25 %
+Measurements were written to C:\Users\User\source\FRLG-StarterTool\docs\handoff\windows-results\retest-c875f97\selftest-regression\beep-selftest-deviceclock-20260923-093723-527.csv.
+audio: output wasapi shared, engine period 10.00 ms (driver min 10.00, default 10.00), mix 44100 Hz float32 8ch, buffer 22.00 ms fed 20.00 ms ahead
+audio: beep started 0.023 ms late
+audio: beep started 0.454 ms late

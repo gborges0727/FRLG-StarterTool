@@ -346,6 +346,7 @@ namespace BeepProbe {
                     case "--volume": volumeScale = int.Parse(args[++i]) / 100f; break;
                     case "--abs-thr": absThreshold = float.Parse(args[++i], CultureInfo.InvariantCulture); break;
                     case "--device-id": deviceId = args[++i]; break;
+                    case "--drift": toolDrift = double.Parse(args[++i], CultureInfo.InvariantCulture); break;
                     default: Console.WriteLine("unknown arg " + args[i]); return 2;
                 }
             }
@@ -686,10 +687,20 @@ namespace BeepProbe {
         // ---------------- selftest mode: listen while FRLGStarterTool.exe --beep-selftest runs, then
         // re-measure every beep in its CSVs on the arrival-fit clock instead of the packet stamps.
 
-        static string selftestDir; static double maxSeconds = 900; static float volumeScale = 1f;
+        static string selftestDir; static double maxSeconds = 900; static float volumeScale = 1f; static double? toolDrift;
+
+        // the ClockDrift the self-test applies, read from the tool's settings file the same way (1.0 when absent)
+        static double ReadToolDrift() {
+            string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "frlg-startertool", "settings.json");
+            if (!File.Exists(path)) return 1.0;
+            var m = System.Text.RegularExpressions.Regex.Match(File.ReadAllText(path), "\"ClockDrift\"\\s*:\\s*([0-9.eE+-]+)");
+            if (!m.Success) return 1.0;
+            double d = double.Parse(m.Groups[1].Value, CultureInfo.InvariantCulture);
+            return Math.Abs(d - 1.0) < 0.001 ? d : 1.0;
+        }
 
         static void RunSelftest(Loopback lb) {
-            if (Stopwatch.Frequency != 10_000_000) throw new Exception("selftest mode assumes a 10 MHz QPC (the tool's target ms = QPC / 1e4 at drift 1.0)");
+            if (Stopwatch.Frequency != 10_000_000) throw new Exception("selftest mode assumes a 10 MHz QPC (the tool's target ms = QPC / 1e4 before its drift correction)");
             DateTime started = DateTime.Now;
             string summaryPath = Path.Combine(selftestDir, "beep-selftest-summary.txt");
             Console.WriteLine("selftest mode: listening until {0} is rewritten (max {1} s)", summaryPath, maxSeconds);
@@ -705,7 +716,14 @@ namespace BeepProbe {
             float thr = onsetFraction * beepPeak * volumeScale;
             Console.WriteLine("{0} packets captured, onset threshold {1:0.0000} ({2:0.00} of the clip's peak at {3:0}% volume), clip onset at frame {4}", pk.Count, thr, onsetFraction, volumeScale * 100, beepOnsetFrame);
             var files = Directory.GetFiles(selftestDir, "beep-selftest-*.csv").Where(f => File.GetLastWriteTime(f) > started).OrderBy(f => File.GetLastWriteTime(f)).ToList();
-            string outCsv = csvPath ?? Path.Combine(selftestDir, "beepprobe-crosscheck.csv");
+            // The self-test's clock is Win32.GetTime() after Win32.SetDrift(settings.ClockDrift), taken once at its start (QPC q0):
+            // T = q0/1e4 + (q - q0) / (1e4 * drift). Invert it to get raw QPC. q0 is estimated from the first target
+            // (about 1.15 s after start); an error of a second in q0 moves the result by drift - 1 seconds, a few microseconds.
+            double drift = toolDrift ?? ReadToolDrift();
+            double firstTarget = files.SelectMany(f => File.ReadLines(f).Skip(1)).Select(l => double.Parse(l.Split(',')[2], CultureInfo.InvariantCulture)).DefaultIfEmpty(0).Min();
+            double q0 = (firstTarget - 1150) * 1e4;
+            Console.WriteLine("self-test clock drift correction {0:0.000000000} ({1:+0.00;-0.00} ppm), converted back to raw QPC", drift, (drift - 1) * 1e6);
+            string outCsv = csvPath != null ? csvPath + ".crosscheck.csv" : Path.Combine(selftestDir, "beepprobe-crosscheck.csv");
             using StreamWriter w = new StreamWriter(outCsv);
             w.WriteLine("file,press,beep,target_ms,selftest_late_ms,stamp_late_ms,fit_late_ms,fit_rms_ms,flags");
             foreach (string file in files) {
@@ -716,7 +734,7 @@ namespace BeepProbe {
                     int press = int.Parse(f[0]), beep = int.Parse(f[1]);
                     double targetMs = double.Parse(f[2], CultureInfo.InvariantCulture);
                     double? selfLate = f[4].Length > 0 ? double.Parse(f[4], CultureInfo.InvariantCulture) : (double?)null;
-                    long target = (long)Math.Round(targetMs * 1e4);
+                    long target = (long)Math.Round(q0 + (targetMs * 1e4 - q0) * drift);
                     long expected = target + (long)(beepOnsetFrame * 1e7 / 48000);
                     long from = target - 1_000_000, to = target + 2_500_000;
                     long onsetStamp = -1, onsetDev = -1; string flags = "";
